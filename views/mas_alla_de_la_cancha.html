@@ -8,27 +8,12 @@
     <meta name="keywords" content="Dibu Martínez, legado, futuro, carrera, expectativas, Argentina, fútbol">
     <meta name="author" content="hernan arana">
 
-
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-
-
-
-
-
-    
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-   
-
     <nav class="navegacion-principal">
         <ul>
             <li><a href="../index.html">El Dibu</a></li>
@@ -37,6 +22,14 @@
             <li><a href="./un_legado_en_construccion.html">Un Legado en Construcción</a></li>
             <li><a href="./mi_tributo.html">Mi Tributo</a></li>
         </ul>
+        <!-- Menú hamburguesa -->
+        <div class="menu-hamburguesa">
+            <button class="hamburger" aria-label="Menú" onclick="toggleMenu()">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
     </nav>
 
     <header class="hero-secondary">
@@ -47,16 +40,12 @@
     </header>
 
     <main class="main-content">
-        
         <section class="videos">
             <h2>Videos Destacados</h2>
 
             <!-- Video 1: La emoción de Dibu Martínez por el pase a semifinales de la Copa América 2024 -->
             <div class="video-container">
-                
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/n_zIo0EL3EA?autoplay=1&loop=1&playlist=n_zIo0EL3EA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
             </div>
 
             <!-- Video 2: Entrevista exclusiva con Dibu y Sofi Martínez -->
@@ -92,5 +81,11 @@
     </footer>
 
     <script src="../js/scripts.js"></script>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.navegacion-principal ul');
+            nav.classList.toggle('activo');
+        }
+    </script>
 </body>
 </html>
