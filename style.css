@@ -1,0 +1,333 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/* FONDO NEGRO PRINCIPAL */
+body {
+    background-color: #000;
+}
+
+/* CONTENEDOR DEL FONDO ANIMADO (IMAGEN INDEX) */
+.fondo-negro {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* FONDO ANIMADO CON FOTO DE DIBU (INDEX) */
+.fondo-animado {
+    text-align: center;
+    padding: 20px;
+}
+
+.fondo-animado img {
+    width: auto;
+    max-width: 132%;
+    height: auto;
+    max-height: 748px;
+    animation: heartbeat 2s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+/* NAVEGACIÓN */
+nav.navegacion-principal {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 100;
+}
+
+nav.navegacion-principal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav.navegacion-principal li {
+    margin: 0 20px;
+}
+
+nav.navegacion-principal a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav.navegacion-principal a:hover {
+    color: #ddd;
+}
+
+/* HEADER PRINCIPAL (INDEX) */
+header.hero {
+    position: absolute;
+    top: 10%; /* Ahora el título aparece arriba */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero-title {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    color: #eee;
+}
+
+/* HEADER SECUNDARIO (OTRAS PÁGINAS) */
+header.hero-secondary {
+    padding: 80px 20px 40px 20px;
+    text-align: center;
+    z-index: 10;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+header.hero-secondary .hero-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header.hero-secondary .hero-subtitle {
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+/* PIE DE PÁGINA */
+.pie-de-pagina {
+    width: 100%;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    z-index: 100;
+    position: relative;
+    bottom: auto;
+    margin-top: auto;
+}
+
+/* REDES SOCIALES */
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.redes-sociales a {
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #1da1f2;
+}
+
+/* GALERÍA TIPO MOSAICO */
+.galeria-seccion h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.galeria-mosaico {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.galeria-mosaico .item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-mosaico .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.galeria-mosaico .item .info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1em;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.galeria-mosaico .item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+.galeria-mosaico .item:hover img {
+    transform: scale(1.1);
+}
+
+.galeria-mosaico .item:hover .info {
+    transform: translateY(0);
+}
+
+/* BIOGRAFÍA SECCIÓN CON COLLAGE DE IMÁGENES */
+.biografia-seccion {
+    padding: 20px;
+    max-width: 960px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+}
+
+.biografia-texto-con-imagenes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.biografia-collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.biografia-collage img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* GALERÍA DE VIDEOS */
+.galeria-videos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.galeria-videos iframe {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    border-radius: 8px;
+}
+
+/* SECCIÓN DE TESTIMONIOS */
+.testimonios-seccion {
+    padding: 40px 20px;
+    background-color: #111;
+    text-align: center;
+}
+
+.testimonios-seccion h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.testimonios-seccion .testimonio {
+    font-size: 1.1em;
+    color: #ccc;
+    margin: 15px auto;
+    max-width: 800px;
+}
+
+.testimonios-seccion .testimonio p {
+    margin-bottom: 15px;
+}
+
+.testimonios-seccion .testimonio span {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Estilo para la sección de videos */
+.videos {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 100%;
+}
+
+.video-container {
+    display: inline-block;
+    margin: 15px;
+}
+
+iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Animación fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Animación zoom-in */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Aplica la animación a la imagen principal */
+.foto-dibu-img {
+    animation: fadeIn 3s ease-in-out;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.foto-dibu-img:hover {
+    transform: scale(1.05);
+}
