@@ -22,6 +22,15 @@
             <li><a href="../views/un_legado_en_construccion.html">Un Legado en Construcción</a></li>
             <li><a href="../views/mi_tributo.html">Mi Tributo</a></li>
         </ul>
+
+        <!-- Menú hamburguesa -->
+        <div class="menu-hamburguesa">
+            <button class="hamburger" aria-label="Menú" onclick="toggleMenu()">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
     </nav>
 
     <header class="hero-secondary">
@@ -69,5 +78,13 @@
     </footer>
 
     <script src="../js/scripts.js"></script>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.navegacion-principal ul');
+            nav.classList.toggle('activo');
+        }
+    </script>
+
 </body>
 </html>

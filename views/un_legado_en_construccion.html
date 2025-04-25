@@ -17,10 +17,10 @@
 <body>
     <!-- Menú de navegación -->
     <nav class="navegacion-principal">
-        <div class="menu-hamburguesa" id="menu-toggle">
-            <i class="fa fa-bars"></i>
-        </div>
-        <ul id="menu" class="menu-cerrado">
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul id="nav-links" class="menu-cerrado">
             <li><a href="../index.html">El Dibu</a></li>
             <li><a href="./Biografia.html">Biografía</a></li>
             <li><a href="./mas_alla_de_la_cancha.html">Más Allá de la Cancha</a></li>
@@ -38,6 +38,7 @@
         <section class="galeria-seccion">
             <h2>Momentos Inolvidables</h2>
             <div class="galeria-mosaico">
+                <!-- Aquí van todas las imágenes con su respectiva descripción -->
                 <div class="item">
                     <img src="../img/dibu en el arsenal.jpg" alt="Primer e inesperada titularidad y trofeo con un gigante de Inglaterra.">
                     <div class="info">Primer título con Arsenal</div>
@@ -108,6 +109,13 @@
         <p>© 2025 Dibu Martínez x Hernan Arana</p>
     </footer>
 
-    <script src="../js/scripts.js"></script>
+    <script>
+        const toggleBtn = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+
+        toggleBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("mostrar");
+        });
+    </script>
 </body>
 </html>
