@@ -12,16 +12,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
-</head>
+
+    <style>
+        .videos {
+            margin-top: 100px; /* Ajusta este valor según necesites */
+        }
+    </style>
+    
+    </head>
 <body>
-    <nav class="navegacion-principal">
-        <ul>
-            <li><a href="../index.html">El Dibu</a></li>
-            <li><a href="./Biografia.html">Biografía</a></li>
-            <li><a href="./mas_alla_de_la_cancha.html">Más Allá de la Cancha</a></li>
-            <li><a href="./un_legado_en_construccion.html">Un Legado en Construcción</a></li>
-            <li><a href="./mi_tributo.html">Mi Tributo</a></li>
-        </ul>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">El Dibu</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="./Biografia.html">Biografía</a></li>
+            <li class="nav-item"><a class="nav-link" href="./mas_alla_de_la_cancha.html">Más Allá de la Cancha</a></li>
+            <li class="nav-item"><a class="nav-link" href="./un_legado_en_construccion.html">Un Legado en Construcción</a></li>
+            <li class="nav-item"><a class="nav-link" href="./mi_tributo.html">Mi tributo</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+   
         <!-- Menú hamburguesa -->
         <div class="menu-hamburguesa">
             <button class="hamburger" aria-label="Menú" onclick="toggleMenu()">
@@ -34,7 +51,7 @@
 
     <header class="hero-secondary">
         <div class="hero-text-container">
-            <h1>Mas alla de la cancha</h1>
+            
             <p class="hero-subtitle">Mejores videos del Dibu donde demuestra porque es un referente Argentino.</p>
         </div>
     </header>
@@ -70,15 +87,16 @@
         </section>
     </main>
 
-    <footer class="pie-de-pagina">
-        <div class="redes-sociales">
-            <a href="https://www.instagram.com/emimartinezz1/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@emimartinezz1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/results?search_query=dibu+martinez" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://twitter.com/emimartinezz1" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
-        <p>© 2025 Dibu Martínez x Hernan Arana</p>
-    </footer>
+     <!-- Footer fijo -->
+  <footer class="pie-de-pagina">
+    <div class="redes-sociales">
+      <a href="https://www.instagram.com/emimartinezz1/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@emimartinezz1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.youtube.com/results?search_query=dibu+martinez" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://twitter.com/emimartinezz1" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>© 2025 Dibu Martínez x Hernan Arana</p>
+  </footer>
 
     <script src="../js/scripts.js"></script>
     <script>

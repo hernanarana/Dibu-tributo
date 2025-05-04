@@ -1,68 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Pasión Bajo los Tres Palos - Mi Tributo al Dibu Martínez</title>
-    <meta name="description" content="Mi homenaje personal a Emiliano 'Dibu' Martínez, un recorrido por sus momentos más emocionantes, su personalidad y el impacto en los hinchas argentinos.">
-    <meta name="keywords" content="Dibu Martínez, Emiliano Martínez, arquero Argentina, fútbol, pasión, atajadas, Mundial, homenaje, fan">
-    <meta name="author" content="hernan arana">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
-    <link rel="stylesheet" href="./css/estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emiliano "Dibu" Martínez - Mi Tributo</title>
+  <meta name="description" content="Conoce la historia y logros de Emiliano 'Dibu' Martínez, el arquero de la selección argentina." />
+  <meta name="keywords" content="Dibu Martínez, Emiliano Martínez, biografía, fútbol, arquero, selección argentina" />
+  <meta name="author" content="Hernán Arana" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/estilos.css" />
 </head>
 <body>
-    <div class="fondo-negro">
-        <div class="fondo-animado">
-            <img src="img/el dibu 88.jpg" alt="Foto de Dibu Martínez">
-        </div>
 
-        <!-- BOTÓN HAMBURGUESA -->
-        <button class="menu-toggle" id="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- NAVEGACIÓN -->
-        <nav class="navegacion-principal" id="nav">
-            <ul id="nav-links">
-                <li><a href="index.html">El Dibu</a></li>
-                <li><a href="./views/Biografia.html">Biografia</a></li>
-                <li><a href="./views/mas_alla_de_la_cancha.html">Más Allá de la Cancha</a></li>
-                <li><a href="./views/un_legado_en_construccion.html">Un Legado en Construccion</a></li>
-                <li><a href="./views/mi_tributo.html">Mi Tributo</a></li>
-            </ul>
-        </nav>
-
-        <header class="hero">
-            <div class="hero-text-container">
-                <h1 class="hero-title">Emiliano Martinez</h1>
-                <p class="hero-subtitle">La locura es un don, abre horizontes que la razón no puede alcanzar...</p>
-            </div>
-        </header>
-
-        <footer class="pie-de-pagina">
-            <div class="redes-sociales">
-                <a href="https://www.instagram.com/emimartinezz1/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@emimartinezz1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.youtube.com/results?search_query=dibu+martinez" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://twitter.com/emimartinezz1" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>© 2025 Dibu Martínez x Hernan Arana</p>
-        </footer>
+  <!-- Navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">El Dibu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="./views/Biografia.html">Biografía</a></li>
+          <li class="nav-item"><a class="nav-link" href="./views/mas_alla_de_la_cancha.html">Más Allá de la Cancha</a></li>
+          <li class="nav-item"><a class="nav-link" href="./views/un_legado_en_construccion.html">Un Legado en Construcción</a></li>
+          <li class="nav-item"><a class="nav-link" href="./views/mi_tributo.html">Mi Tributo</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <!-- SCRIPT PARA MENÚ HAMBURGUESA -->
-    <script>
-        const toggleBtn = document.getElementById("menu-toggle");
-        const navLinks = document.getElementById("nav-links");
+  <!-- Hero principal -->
+  <header class="hero-index">
+    <div class="contenido-hero">
+      <h1>Emiliano "Dibu" Martínez</h1>
+      <p>La locura es un don, abre horizontes que la razón no puede alcanzar.</p>
+    </div>
+  </header>
 
-        toggleBtn.addEventListener("click", () => {
-            navLinks.classList.toggle("mostrar");
-        });
-    </script>
+  <!-- Footer fijo -->
+  <footer class="pie-de-pagina">
+    <div class="redes-sociales">
+      <a href="https://www.instagram.com/emimartinezz1/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@emimartinezz1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.youtube.com/results?search_query=dibu+martinez" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://twitter.com/emimartinezz1" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>© 2025 Dibu Martínez x Hernan Arana</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

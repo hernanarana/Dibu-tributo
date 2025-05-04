@@ -1,71 +1,43 @@
+/* Reset de márgenes y padding */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #fff;
-    overflow-x: hidden;
     height: 100%;
-}
-
-/* FONDO NEGRO PRINCIPAL */
-body {
     background-color: #000;
 }
 
-/* CONTENEDOR DEL FONDO ANIMADO (IMAGEN INDEX) */
-.fondo-negro {
-    position: relative;
-    min-height: 100vh;
+/* Contenedor general */
+.fondo-principal {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #000;
+    background-image: url('./img/dibu-fondo.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-attachment: fixed;
 }
 
-/* FONDO ANIMADO CON FOTO DE DIBU (INDEX) */
-.fondo-animado {
-    text-align: center;
-    padding: 20px;
-}
-
-.fondo-animado img {
-    width: auto;
-    max-width: 132%;
-    height: auto;
-    max-height: 748px;
-    animation: heartbeat 2s infinite alternate;
-    z-index: -1;
-}
-
-@keyframes heartbeat {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.05); }
-}
-
-/* NAVEGACIÓN */
+/* Navbar */
 nav.navegacion-principal {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 15px 0;
-    text-align: center;
-    z-index: 100;
+    z-index: 999;
 }
 
 nav.navegacion-principal ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
     flex-wrap: wrap;
-}
-
-nav.navegacion-principal li {
-    margin: 0 20px;
 }
 
 nav.navegacion-principal a {
@@ -76,258 +48,309 @@ nav.navegacion-principal a {
 }
 
 nav.navegacion-principal a:hover {
-    color: #ddd;
-}
-
-/* HEADER PRINCIPAL (INDEX) */
-header.hero {
-    position: absolute;
-    top: 10%; /* Ahora el título aparece arriba */
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.hero-title {
-    font-size: 2.8em;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.hero-subtitle {
-    font-size: 1.2em;
-    color: #eee;
-}
-
-/* HEADER SECUNDARIO (OTRAS PÁGINAS) */
-header.hero-secondary {
-    padding: 80px 20px 40px 20px;
-    text-align: center;
-    z-index: 10;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-header.hero-secondary .hero-title {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-header.hero-secondary .hero-subtitle {
-    font-size: 1.1em;
     color: #ccc;
 }
 
-/* PIE DE PÁGINA */
-.pie-de-pagina {
-    width: 100%;
-    padding: 20px 0;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
+/* Hero Section */
+.hero-index {
+    background-image: url('./img/dibu-fondo.jpg');
+    background-size: cover; /* Asegura que la imagen cubra toda la sección */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
     text-align: center;
-    z-index: 100;
-    position: relative;
-    bottom: auto;
-    margin-top: auto;
+    padding-bottom: 150px;
 }
 
-/* REDES SOCIALES */
+.contenido-hero {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 12px;
+    max-width: 90%;
+}
+
+.contenido-hero h1 {
+    font-size: 3rem; /* Aumenté el tamaño del título */
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.contenido-hero p {
+    font-size: 1.2rem;
+    color: #dddddd;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 100px; /* Asegura que el contenido no quede tapado por el footer */
+}
+
+/* Biografía */
+.biografia-seccion {
+    position: relative;
+    z-index: 10;
+}
+
+/* Contenedor para el texto y las fotos con Flexbox */
+.biografia-texto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Texto de la biografía */
+.biografia-texto p {
+    flex: 1;
+    font-size: 1.2em;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Estilo para las imágenes del collage */
+.biografia-collage {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.collage-img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.collage-img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Footer */
+footer.pie-de-pagina {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    z-index: 999;
+}
+
 .redes-sociales {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .redes-sociales a {
-    color: white;
-    font-size: 1.5em;
-    transition: color 0.3s ease;
+    color: #fff;
+    font-size: 1.4em;
+    transition: color 0.3s;
 }
 
 .redes-sociales a:hover {
     color: #1da1f2;
 }
 
-/* GALERÍA TIPO MOSAICO */
-.galeria-seccion h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
+/* Responsive */
+@media (max-width: 768px) {
+    .biografia-texto {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .biografia-texto p {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    .collage-img {
+        width: 80%;
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2em;
+    }
+
+    .galeria-mosaico {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
 }
 
-.galeria-mosaico {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-.galeria-mosaico .item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.galeria-mosaico .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.galeria-mosaico .item .info {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    font-size: 1.1em;
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
-}
-
-.galeria-mosaico .item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-}
-
-.galeria-mosaico .item:hover img {
-    transform: scale(1.1);
-}
-
-.galeria-mosaico .item:hover .info {
-    transform: translateY(0);
-}
-
-/* BIOGRAFÍA SECCIÓN CON COLLAGE DE IMÁGENES */
-.biografia-seccion {
-    padding: 20px;
-    max-width: 960px;
-    margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
-}
-
-.biografia-texto-con-imagenes {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.biografia-collage {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.biografia-collage img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* GALERÍA DE VIDEOS */
-.galeria-videos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.galeria-videos iframe {
-    width: 100%;
-    max-width: 500px;
-    height: 300px;
-    border-radius: 8px;
-}
-
-/* SECCIÓN DE TESTIMONIOS */
-.testimonios-seccion {
-    padding: 40px 20px;
-    background-color: #111;
-    text-align: center;
-}
-
-.testimonios-seccion h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.testimonios-seccion .testimonio {
-    font-size: 1.1em;
-    color: #ccc;
-    margin: 15px auto;
-    max-width: 800px;
-}
-
-.testimonios-seccion .testimonio p {
-    margin-bottom: 15px;
-}
-
-.testimonios-seccion .testimonio span {
-    display: block;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-/* Estilo para la sección de videos */
+/* Videos */
 .videos {
-    text-align: center;
-    margin: 40px auto;
-    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-template-rows: repeat(2, 1fr);
+    max-width: 1200px;
+    margin: auto;
+    transform: rotate(-15deg);
 }
 
 .video-container {
-    display: inline-block;
-    margin: 15px;
+    position: relative;
+    padding-top: 56.25%;
+    background: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    transform: rotate(15deg);
+    transition: transform 0.3s ease;
 }
 
-iframe {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/* Animación fade-in */
+.video-container:hover {
+    transform: rotate(0deg);
+}
+
+/* Galería */
+.galeria-espectacular {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.foto {
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 300px;
+    overflow: hidden;
+}
+
+.foto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.descripcion {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.foto:hover .descripcion {
+    opacity: 1;
+}
+
+.galeria-header {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.galeria-header h2 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.galeria-header p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* Efecto de apertura suave */
+.foto {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.foto:nth-child(even) {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.foto:nth-child(odd) {
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Animación zoom-in */
-@keyframes zoomIn {
     from {
-        transform: scale(0.8);
         opacity: 0;
     }
     to {
-        transform: scale(1);
         opacity: 1;
     }
 }
 
-/* Aplica la animación a la imagen principal */
-.foto-dibu-img {
-    animation: fadeIn 3s ease-in-out;
-    transition: transform 0.3s ease;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+/* Para el index */
+body.index-page footer.pie-de-pagina {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000; /* Fondo negro */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+    font-size: 14px;
 }
 
-.foto-dibu-img:hover {
-    transform: scale(1.05);
+/* Para que el contenido no quede tapado por el footer en la página principal */
+body.index-page .main-content {
+    padding-bottom: 120px; /* ajusta según el tamaño del footer */
+}
+
+/* Para las demás páginas, el footer debe comportarse normalmente */
+footer.pie-de-pagina {
+    position: relative;
+    background-color: #000; /* Fondo negro */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+    font-size: 14px;
+}
+
+/* Aumentar el margen inferior de los videos */
+.video-container {
+    margin-bottom: 100px; /* Aumentamos el margen */
+}
+
+/* Asegurar que el footer no tape el contenido y bajar más los videos */
+footer.pie-de-pagina {
+    margin-top: 120px; /* Aumentamos el margen superior del footer */
 }

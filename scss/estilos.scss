@@ -1,197 +1,366 @@
 // Variables
-$primary-color: #fff;
-$secondary-color: #ddd;
-$bg-color: rgba(0, 0, 0, 0.7);
-$transition-speed: 0.3s;
+$primary-bg-color: #000;
+$secondary-bg-color: rgba(0, 0, 0, 0.8);
+$text-color: #fff;
+$highlight-color: #ccc;
+$hover-color: #1da1f2;
+$footer-bg-color: #000;
+$footer-text-color: #fff;
+$font-family: 'Poppins', sans-serif;
+$video-margin-bottom: 100px;
+$footer-margin-top: 120px;
 
-// Mixin para transiciones
-@mixin transition($property, $duration) {
-    transition: $property $duration ease;
+// Mixin para el box shadow
+@mixin box-shadow($x, $y, $blur, $color) {
+  box-shadow: $x $y $blur $color;
+}
+
+// Mixin para los bordes redondeados
+@mixin border-radius($radius) {
+  border-radius: $radius;
 }
 
 // Estilos generales
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    color: $primary-color;
-    overflow-x: hidden;
-    height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  color: $text-color;
+  height: 100%;
+  background-color: $primary-bg-color;
 }
 
-body {
-    background-color: #000;
+// Contenedor general
+.fondo-principal {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $primary-bg-color;
+  background-image: url('../img/dibu-fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-// Fondo negro
-.fondo-negro {
-    position: relative;
-    min-height: 100vh;
+// Navbar
+nav.navegacion-principal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $secondary-bg-color;
+  padding: 15px 0;
+  z-index: 999;
+
+  ul {
+    list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $highlight-color;
+    }
+  }
 }
 
-// Fondo animado con imagen
-.fondo-animado {
-    text-align: center;
-    padding: 20px;
+// Hero Section
+.hero-index {
+  background-image: url('../img/dibu-fondo.jpg');
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: $primary-bg-color;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 150px;
 
-    img {
-        width: auto;
-        max-width: 132%;
-        height: auto;
-        max-height: 748px;
-        animation: heartbeat 2s infinite alternate;
-        z-index: -1;
-    }
-}
-
-@keyframes heartbeat {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.05); }
-}
-
-// Menú de navegación
-nav.navegacion-principal {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 15px 0;
-    text-align: center;
-    z-index: 100;
-
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    li {
-        margin: 0 20px;
-    }
-
-    a {
-        color: $primary-color;
-        text-decoration: none;
-        font-size: 1.1em;
-        @include transition(color, 0.3s);
-    }
-
-    a:hover {
-        color: $secondary-color;
-    }
-}
-
-// Header principal (Index)
-header.hero {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-
-    .hero-title {
-        font-size: 2.8em;
-        margin-bottom: 10px;
-        color: $primary-color;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2em;
-        color: #eee;
-    }
-}
-
-// Header secundario (otras páginas)
-header.hero-secondary {
-    padding: 80px 20px 40px 20px;
-    text-align: center;
-    z-index: 10;
-    position: relative;
+  .contenido-hero {
     background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    @include border-radius(12px);
+    max-width: 90%;
 
-    .hero-title {
-        font-size: 2.5em;
-        margin-bottom: 10px;
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: $text-color;
+      margin-bottom: 0.5rem;
     }
 
-    .hero-subtitle {
-        font-size: 1.1em;
-        color: #ccc;
+    p {
+      font-size: 1.2rem;
+      color: #dddddd;
     }
+  }
 }
 
-// Pie de página
-.pie-de-pagina {
-    width: 100%;
-    padding: 20px 0;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align: center;
-    z-index: 100;
-    position: relative;
-    bottom: auto;
-    margin-top: auto;
+// Main content
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 100px; // Asegura que el contenido no quede tapado por el footer
 }
 
-// Redes sociales
-.redes-sociales {
+// Biografía
+.biografia-seccion {
+  position: relative;
+  z-index: 10;
+}
+
+.biografia-texto {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+
+  p {
+    flex: 1;
+    font-size: 1.2em;
+    text-align: justify;
+    line-height: 1.6;
+  }
+}
+
+.biografia-collage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  .collage-img {
+    width: 250px;
+    height: auto;
+    @include border-radius(10px);
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+}
+
+// Footer
+footer.pie-de-pagina {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: $footer-bg-color;
+  text-align: center;
+  padding: 10px;
+  color: $footer-text-color;
+  z-index: 999;
+
+  .redes-sociales {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 
     a {
-        color: white;
-        font-size: 1.5em;
-        @include transition(color, 0.3s);
-    }
+      color: $footer-text-color;
+      font-size: 1.4em;
+      transition: color 0.3s;
 
-    a:hover {
-        color: #1da1f2;
+      &:hover {
+        color: $hover-color;
+      }
     }
+  }
+
+  p {
+    font-size: 14px;
+  }
 }
 
-// Animaciones y efectos
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+// Responsive
+@media (max-width: 768px) {
+  .biografia-texto {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    p {
+      flex: 0 0 100%;
+      text-align: center;
+    }
+  }
+
+  .collage-img {
+    width: 80%;
+  }
+
+  .hero-title {
+    font-size: 2.5em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2em;
+  }
+
+  .galeria-mosaico {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
 
-@keyframes zoomIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
+// Videos
+.videos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 1200px;
+  margin: auto;
+  transform: rotate(-15deg);
 
-.foto-dibu-img {
-    animation: fadeIn 3s ease-in-out;
+  .video-container {
+    position: relative;
+    padding-top: 56.25%;
+    background: $primary-bg-color;
+    @include border-radius(15px);
+    overflow: hidden;
+    transform: rotate(15deg);
     transition: transform 0.3s ease;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
     &:hover {
-        transform: scale(1.05);
+      transform: rotate(0deg);
     }
+  }
+}
+
+// Galería
+.galeria-espectacular {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.foto {
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include border-radius(8px);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.05);
+    @include box-shadow(0, 10px, 20px, rgba(0, 0, 0, 0.2));
+  }
+
+  .descripcion {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px;
+    @include border-radius(5px);
+    font-size: 16px;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  &:hover .descripcion {
+    opacity: 1;
+  }
+}
+
+.galeria-header {
+  text-align: center;
+  margin: 50px 0;
+
+  h2 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #777;
+  }
+}
+
+// Animaciones
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.foto {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+
+  &:nth-child(even) {
+    animation-duration: 1s;
+  }
+
+  &:nth-child(odd) {
+    animation-duration: 1.5s;
+  }
+}
+
+// Para el index
+body.index-page footer.pie-de-pagina {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $primary-bg-color;
+  color: $footer-text-color;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+// Asegurar que el contenido no quede tapado por el footer en la página principal
+body.index-page .main-content {
+  padding-bottom: $footer-margin-top;
 }
